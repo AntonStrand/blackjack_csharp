@@ -22,10 +22,7 @@ namespace BlackJack.controller
 
     public bool Play()
     {
-      m_view.DisplayWelcomeMessage();
-
-      m_view.DisplayDealerHand(m_game.GetDealerHand(), m_game.GetDealerScore());
-      m_view.DisplayPlayerHand(m_game.GetPlayerHand(), m_game.GetPlayerScore());
+      Update();
 
       if (m_game.IsGameOver())
       {
@@ -49,6 +46,7 @@ namespace BlackJack.controller
 
       return input != Input.Quit;
     }
+
     public void Update()
     {
       Thread.Sleep(SHOW_DELAY);
