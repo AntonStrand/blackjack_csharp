@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace BlackJack.model.rules
+﻿namespace BlackJack.model.rules
 {
-  class RulesFactory
+  class AmericanRulesFactory : IAbstractRulesFactory
   {
     public IHitStrategy GetHitRule()
     {

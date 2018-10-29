@@ -15,7 +15,7 @@ namespace BlackJack.model
     private rules.IWinStrategy m_winRule;
 
 
-    public Dealer(rules.RulesFactory a_rulesFactory)
+    public Dealer(rules.IAbstractRulesFactory a_rulesFactory)
     {
       m_newGameRule = a_rulesFactory.GetNewGameRule();
       m_hitRule = a_rulesFactory.GetHitRule();
