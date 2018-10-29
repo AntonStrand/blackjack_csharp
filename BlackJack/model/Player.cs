@@ -14,10 +14,7 @@ namespace BlackJack.model
     {
       a_card.Show(a_shouldShowCard);
       m_hand.Add(a_card);
-      foreach (IObserver o in m_observers)
-      {
-        o.Update();
-      }
+      notify();
     }
 
     public void Attach(IObserver a_observer)
@@ -69,6 +66,14 @@ namespace BlackJack.model
       }
 
       return score;
+    }
+
+    private void notify()
+    {
+      foreach (IObserver o in m_observers)
+      {
+        o.Update();
+      }
     }
   }
 }
