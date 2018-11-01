@@ -9,8 +9,10 @@ namespace BlackJack
   {
     static void Main(string[] args)
     {
-      model.Game g = new model.Game(new model.rules.InternationalRulesFactory());
-      view.IView v = new view.SimpleView(); // new view.SwedishView();
+      model.rules.IAbstractRulesFactory rules = new model.rules.AmericanRulesFactory();
+
+      model.Game g = new model.Game(rules);
+      view.IView v = new view.SimpleView(rules); // new view.SwedishView();
       controller.PlayGame ctrl = new controller.PlayGame(g, v);
 
       while (ctrl.Play()) ;

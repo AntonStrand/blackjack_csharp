@@ -16,5 +16,11 @@
     {
       return new DealerWinOnEqualStrategy();
     }
+
+    public void Accept(IRuleVisitor visitor)
+    {
+      visitor.VisitAmericanRule(this);
+    }
+
   }
 }

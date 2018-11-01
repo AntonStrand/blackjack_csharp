@@ -16,5 +16,10 @@
     {
       return new PlayerWinOnEqualStrategy();
     }
+
+    public void Accept(IRuleVisitor visitor)
+    {
+      visitor.VisitInternationalRule(this);
+    }
   }
 }

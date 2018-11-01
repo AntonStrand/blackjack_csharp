@@ -5,5 +5,6 @@ namespace BlackJack.model.rules
     IHitStrategy GetHitRule();
     INewGameStrategy GetNewGameRule();
     IWinStrategy GetWinRule();
+    void Accept(IRuleVisitor visitor);
   }
 }
