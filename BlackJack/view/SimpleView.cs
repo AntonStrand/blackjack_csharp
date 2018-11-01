@@ -8,10 +8,19 @@ namespace BlackJack.view
   class SimpleView : IView
   {
 
+    private view.SimpleRuleTypePrinter m_rulePrinter;
+    private model.rules.IAbstractRulesFactory m_rules;
+
+    public SimpleView(model.rules.IAbstractRulesFactory a_rules)
+    {
+      m_rulePrinter = new view.SimpleRuleTypePrinter();
+      m_rules = a_rules;
+    }
     public void DisplayWelcomeMessage()
     {
       System.Console.Clear();
       System.Console.WriteLine("Hello Black Jack World");
+      m_rules.Accept(m_rulePrinter);
       System.Console.WriteLine("Type 'p' to Play, 'h' to Hit, 's' to Stand or 'q' to Quit\n");
     }
 

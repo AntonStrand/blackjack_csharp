@@ -7,10 +7,19 @@ namespace BlackJack.view
 {
   class SwedishView : IView
   {
+    private view.SimpleRuleTypePrinter m_rulePrinter;
+    private model.rules.IAbstractRulesFactory m_rules;
+
+    public SwedishView(model.rules.IAbstractRulesFactory a_rules)
+    {
+      m_rulePrinter = new view.SimpleRuleTypePrinter();
+      m_rules = a_rules;
+    }
     public void DisplayWelcomeMessage()
     {
       System.Console.Clear();
       System.Console.WriteLine("Hej Black Jack Världen");
+      m_rules.Accept(m_rulePrinter);
       System.Console.WriteLine("----------------------");
       System.Console.WriteLine("Skriv 'p' för att Spela, 'h' för nytt kort, 's' för att stanna 'q' för att avsluta\n");
     }
